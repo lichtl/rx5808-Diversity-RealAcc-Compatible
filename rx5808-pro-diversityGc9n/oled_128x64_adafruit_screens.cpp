@@ -88,6 +88,7 @@ char screens::begin(const char *call_sign) {
   delay(2000);
 #endif
   // init done
+  display.dim(true);
   reset();
  
   display.fillRect(0, 0, display.width(), 11, WHITE);
