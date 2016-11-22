@@ -37,28 +37,13 @@ SOFTWARE.
 
 #include <avr/pgmspace.h>
 #include <EEPROM.h>
-
 #include "settings.h"
-
-
-// uncomment depending on the display you are using.
-// this is an issue with the arduino preprocessor
- 
-#ifdef OLED_128x64_ADAFRUIT_SCREENS
-
-  #ifdef SH1106
-  // #include <Adafruit_SH1106.h>
- #else
-    #include <Adafruit_SSD1306.h>
- #endif
-    #include <Adafruit_GFX.h>
-    #include <Wire.h>
-    #include <SPI.h>
-#endif
-//#ifdef OLED_128x64_U8G_SCREENS
-//    #include <U8glib.h>
-//#endif
+#include <Adafruit_SSD1306.h>
+#include <Adafruit_GFX.h>
+#include <Wire.h>
+#include <SPI.h>
 #include "screens.h"
+
 screens drawScreen;
 
 #define EEPROM_ADR_TUNE_FAV_LAST 108
@@ -76,7 +61,7 @@ const uint16_t channelTable[] PROGMEM = {
   0x2903,    0x290C,    0x2916,    0x291F,    0x2989,    0x2992,    0x299C,    0x2A05,    // Band B
   0x2895,    0x288B,    0x2881,    0x2817,    0x2A0F,    0x2A19,    0x2A83,    0x2A8D,    // Band E
   0x2906,    0x2910,    0x291A,    0x2984,    0x298E,    0x2998,    0x2A02,    0x2A0C,    // Band F / Airwave
-  0x281d ,   0x2890 ,   0x2902 ,   0x2915 ,   0x2987 ,   0x299a ,  0x2a0c ,    0x2a1f,    // Band C / Immersion Raceband
+  0x281d,    0x2890,    0x2902,    0x2915,    0x2987,    0x299a,    0x2a0C,    0x2a1F,    // Band C / Immersion Raceband
   0x2609,    0x261C,    0x268E,    0x2701,    0x2713,    0x2786,    0x2798,    0x280B     // Band D / 5.3 
 };
 

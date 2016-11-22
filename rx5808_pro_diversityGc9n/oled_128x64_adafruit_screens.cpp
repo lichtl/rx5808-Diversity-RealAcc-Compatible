@@ -826,6 +826,3 @@ void screens::updateSave(const char * msg) {
   display.print(msg);
   display.display();
 }
- 
- 
-#endif
