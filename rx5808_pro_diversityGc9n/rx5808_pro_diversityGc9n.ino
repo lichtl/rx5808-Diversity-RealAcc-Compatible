@@ -1325,6 +1325,10 @@ void setReceiver(uint8_t receiver) {
 
 void setChannelModule(uint8_t channel)
 {
+  #ifdef Debug
+    Serial.print("setChannelModule: [channel] ");
+    Serial.println(channel);
+  #endif
   uint8_t i;
   uint16_t channelData;
 
