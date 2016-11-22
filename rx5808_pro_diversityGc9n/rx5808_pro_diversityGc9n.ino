@@ -1225,7 +1225,7 @@ uint16_t readRSSI(char receiver)
 #endif
 
 #ifdef Debug
-  rssiB +=  random(RSSI_MAX_VAL-200, RSSI_MAX_VAL);//
+  // rssiB +=  random(RSSI_MAX_VAL-200, RSSI_MAX_VAL);
 
  // rssiA +=  random(RSSI_MAX_VAL-50, RSSI_MAX_VAL);
    
