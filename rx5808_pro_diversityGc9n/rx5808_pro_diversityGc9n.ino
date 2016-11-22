@@ -187,7 +187,7 @@ void setup()
     {
         // save 8 bit
         EEPROM.write(EEPROM_ADR_STATE,START_STATE);
-        EEPROM.write(EEPROM_ADR_TUNE,CHANNEL_MIN_INDEX);
+        EEPROM.write(EEPROM_ADR_TUNE,CHANNEL_MIN);
         EEPROM.write(EEPROM_ADR_BEEP,settings_beeps);
         EEPROM.write(EEPROM_ADR_ORDERBY,settings_orderby_channel);
         // save 16 bit
@@ -746,9 +746,9 @@ void loop()
                         beep(50); // beep & debounce
                           delay(KEY_DEBOUNCE); // debounce
                         channel > CHANNEL_MAX ? channel = CHANNEL_MIN : false;
-                        if (channelIndex > CHANNEL_MAX_INDEX)
+                        if (channelIndex > CHANNEL_MAX)
                         {
-                            channelIndex = CHANNEL_MIN_INDEX;
+                            channelIndex = CHANNEL_MIN;
                         }   
                        // drawScreen.seekMode(state);
                         EEPROM.write(EEPROM_ADR_TUNE,channelIndex);
@@ -780,9 +780,9 @@ void loop()
                     delay(KEY_DEBOUNCE); // debounce
                   
                     channel < CHANNEL_MIN ? channel = CHANNEL_MAX : false;
-                    if (channelIndex > CHANNEL_MAX_INDEX) // negative overflow
+                    if (channelIndex > CHANNEL_MAX) // negative overflow
                     {
-                        channelIndex = CHANNEL_MAX_INDEX;
+                        channelIndex = CHANNEL_MAX;
                     }
                   
                   //drawScreen.seekMode(state);
@@ -836,9 +836,9 @@ void loop()
                 channelIndex++;
                 channel++;
                 channel > CHANNEL_MAX ? channel = CHANNEL_MIN : false;
-                if (channelIndex > CHANNEL_MAX_INDEX)
+                if (channelIndex > CHANNEL_MAX)
                 {
-                    channelIndex = CHANNEL_MIN_INDEX;
+                    channelIndex = CHANNEL_MIN;
                 }
             }
             if( digitalRead(buttonDown) == LOW) // channel DOWN
@@ -849,9 +849,9 @@ void loop()
                 channelIndex--;
                 channel--;
                 channel < CHANNEL_MIN ? channel = CHANNEL_MAX : false;
-                if (channelIndex > CHANNEL_MAX_INDEX) // negative overflow
+                if (channelIndex > CHANNEL_MAX) // negative overflow
                 {
-                    channelIndex = CHANNEL_MAX_INDEX;
+                    channelIndex = CHANNEL_MAX;
                 }
             }
 
