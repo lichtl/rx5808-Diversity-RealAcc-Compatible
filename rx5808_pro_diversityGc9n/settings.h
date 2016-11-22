@@ -41,10 +41,8 @@ SOFTWARE.
 //#define USE_FLIP_SCREEN
 #define USE_BOOT_LOGO
 
-// Receiver Module version
-// used for tuning time
-#define rx5808
-//#define rx5880
+
+
 #define CH3 A3
 
 #define spiDataPin 10
@@ -127,16 +125,7 @@ SOFTWARE.
 #define CHANNEL_MIN_INDEX 0
 #define CHANNEL_MAX_INDEX 47
 
-#ifdef rx5808
-    // rx5808 module need >20ms to tune.
-    // 25 ms will do a 40 channel scan in 1 second.
-    #define MIN_TUNE_TIME 25
-#endif
-#ifdef rx5880
-    // rx5880 module needs >30ms to tune.
-    // 35 ms will do a 40 channel scan in 1.4 seconds.
-    #define MIN_TUNE_TIME 35
-#endif
+#define MIN_TUNE_TIME 25
 
 #define CHANNEL_MAX 47
 #define CHANNEL_MIN 0
