@@ -123,7 +123,6 @@ SOFTWARE.
 
 #define CHANNEL_BAND_SIZE 8
 
-
 #define MIN_TUNE_TIME 25
 
 #define CHANNEL_MAX 47

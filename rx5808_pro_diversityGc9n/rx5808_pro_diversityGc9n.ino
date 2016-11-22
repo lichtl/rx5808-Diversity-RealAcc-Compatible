@@ -43,8 +43,10 @@ SOFTWARE.
 #include <Wire.h>
 #include <SPI.h>
 #include "screens.h"
+#include <RichWave.h>
 
 screens drawScreen;
+RichWave rxModule(spiDataPin, slaveSelectPin, spiClockPin);
 
 #define EEPROM_ADR_TUNE_FAV_LAST 108
 
