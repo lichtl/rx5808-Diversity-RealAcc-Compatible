@@ -41,15 +41,13 @@ SOFTWARE.
 #include "settings.h"
 
 
-// uncomment depending on the display you are using.
-// this is an issue with the arduino preprocessor
- 
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_GFX.h>
 #include <Wire.h>
 #include <SPI.h>
 
 #include <RichWave.h>
+RichWave rxModule(spiDataPin, slaveSelectPin, spiClockPin);
 
 #include "screens.h"
 screens drawScreen;
