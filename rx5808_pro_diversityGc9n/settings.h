@@ -31,19 +31,8 @@ SOFTWARE.
 //#define Debug
 
 
-// Choose the display you will be using
-// you will also have to uncomment the includes in the main project.
-//#define TVOUT_SCREENS
 #define OLED_128x64_ADAFRUIT_SCREENS
 
-// use the library from https://github.com/badzz/Adafruit_SH1106 before enabling
-//#define SH1106
-
-// u8glib has performance issues.
-//#define OLED_128x64_U8G_SCREENS
-
-// this will be displayed on the screensaver.
-// Up to 10 letters
 #define CALL_SIGN "CALL SIGN"
 
 // Feature Togglels
@@ -51,10 +40,6 @@ SOFTWARE.
 #define USE_IR_EMITTER
 //#define USE_FLIP_SCREEN
 #define USE_BOOT_LOGO
-// Choose if you wish to use 8 additional Channels 
-// 5362 MHz 5399 MHz 5436 MHz 5473 MHz 5510 MHz 5547 MHz 5584 MHz 5621 MHz
-// Local laws may prohibit the use of these frequencies use at your own risk!
-#define USE_LBAND
 
 // Receiver Module version
 // used for tuning time
@@ -140,11 +125,7 @@ SOFTWARE.
 
 #define CHANNEL_BAND_SIZE 8
 #define CHANNEL_MIN_INDEX 0
-#ifdef USE_LBAND
-    #define CHANNEL_MAX_INDEX 47
-#else
-    #define CHANNEL_MAX_INDEX 39
-#endif
+#define CHANNEL_MAX_INDEX 47
 
 #ifdef rx5808
     // rx5808 module need >20ms to tune.
@@ -157,11 +138,7 @@ SOFTWARE.
     #define MIN_TUNE_TIME 35
 #endif
 
-#ifdef USE_LBAND
-    #define CHANNEL_MAX 47
-#else
-    #define CHANNEL_MAX 39
-#endif
+#define CHANNEL_MAX 47
 #define CHANNEL_MIN 0
 
 #define EEPROM_ADR_STATE 0
